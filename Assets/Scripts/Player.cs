@@ -7,5 +7,6 @@ public class Player : MonoBehaviour
 {
     public KeyCode LeftKey;
     public KeyCode RightKey;
-    public KeyCode AttackKey;
+    public KeyCode DashKey;
+    public KeyCode ActionKey;
 }
