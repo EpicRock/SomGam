@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //Vector2 TargetSpeed = new Vector2(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y).normalized * speed;
-        Vector2 TargetSpeed = new Vector2(math.cos(transform.rotation.eulerAngles.z) * speed, math.sin(transform.rotation.eulerAngles.z) * speed);
+        Vector2 TargetSpeed = new Vector2(math.cos(transform.rotation.eulerAngles.z * Mathf.PI / 180) * speed, math.sin(transform.rotation.eulerAngles.z * Mathf.PI / 180) * speed);
         Debug.DrawLine(transform.position, transform.position + new Vector3(TargetSpeed.x, TargetSpeed.y, 1));
 
         rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, TargetSpeed, ref CurrentVelocityRef, speedSmooth);

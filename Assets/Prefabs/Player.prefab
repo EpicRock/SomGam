@@ -67,7 +67,7 @@ MonoBehaviour:
   rigidbody: {fileID: 993999421217716728}
   player: {fileID: 1404673182382138767}
   speed: 2
-  angularSpeed: 1
+  angularSpeed: 100
   speedSmooth: 1
   direction: {x: 0, y: 0, z: 0, w: 0}
 --- !u!212 &2588455967711201074
