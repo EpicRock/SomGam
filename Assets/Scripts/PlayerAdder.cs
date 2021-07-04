@@ -36,6 +36,7 @@ public class PlayerAdder : MonoBehaviour
             if (player == null)
             {
                 player = Instantiate(PlayerPrefab).GetComponent<Player>();
+                Player.AllPlayers.Add(player.gameObject);
                 WaitForKeyPress = true; //If true it waits for 4 presses of keys
                 eventSystem.enabled = false; //UI freezes
                 ButtonText.text = "Remove";
@@ -55,6 +56,7 @@ public class PlayerAdder : MonoBehaviour
                 ActionKeyTMP.text = "";
 
                 //Cleaning
+                Player.AllPlayers.Remove(player.gameObject);
                 Destroy(player.gameObject);
                 player = null;
                 ButtonText.text = "Add player";

@@ -976,19 +976,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8152437090344317346}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: ef96c21491645434b89362cfb5c7780a, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8152437091072737078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,6 +1031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 8152437090344317347}
   PlayerPrefab: {fileID: 1158203669995747681, guid: 20c3f820b055ea84da78b7fb46ec4c6e, type: 3}
+  eventSystem: {fileID: 0}
   ButtonText: {fileID: 2000044700747269998}
   LeftKeyTMP: {fileID: 1938790150889186775}
   RightKeyTMP: {fileID: 2277093259253785382}
