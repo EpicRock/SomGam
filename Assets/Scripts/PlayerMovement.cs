@@ -10,17 +10,19 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float angularSpeed;
     public float speedSmooth;
-    public Quaternion direction;
 
     private Vector2 CurrentVelocityRef;
 
     void Update()
     {
-        //Vector2 TargetSpeed = new Vector2(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y).normalized * speed;
-        Vector2 TargetSpeed = new Vector2(math.cos(transform.rotation.eulerAngles.z * Mathf.PI / 180) * speed, math.sin(transform.rotation.eulerAngles.z * Mathf.PI / 180) * speed);
-        Debug.DrawLine(transform.position, transform.position + new Vector3(TargetSpeed.x, TargetSpeed.y, 1));
+        //Creating player velocity from max speed and rotation
+        Vector2 TargetVelocity = new Vector2(math.cos(transform.rotation.eulerAngles.z * Mathf.PI / 180) * speed, math.sin(transform.rotation.eulerAngles.z * Mathf.PI / 180) * speed);
+        Debug.DrawLine(transform.position, transform.position + new Vector3(TargetVelocity.x, TargetVelocity.y, 1));
 
-        rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, TargetSpeed, ref CurrentVelocityRef, speedSmooth);
+        //Slowly increses velocity to its target (feature?)
+        rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, TargetVelocity, ref CurrentVelocityRef, speedSmooth);
+
+        //Rotating player
         if (Input.GetKey(player.LeftKey))
         {
             rigidbody.angularVelocity = angularSpeed;
