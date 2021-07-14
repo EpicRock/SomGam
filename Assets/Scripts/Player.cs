@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public static List<GameObject> AllPlayers = new List<GameObject>();
 
     public SpriteRenderer spriteRenderer;
+    public PlayerMovement playerMovement;
 
     //All of these fields are set up by PlayerAdder script
     public KeyCode LeftKey;
@@ -20,6 +21,6 @@ public class Player : MonoBehaviour
     {
         transform.position = SpawnPoint;
         spriteRenderer.enabled = true;
-        GetComponent<PlayerMovement>().enabled = true;
+        playerMovement.enabled = true;
     }
 }
